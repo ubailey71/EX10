@@ -3,11 +3,7 @@ import math
 
 class Asteroid:
     """
-    This class creates objects of type asteroids and preform methods on them
-    in the following methods you will find a specific instructions about
-    every method input and output.
-
-    make sure you follow them, wrong input may cause the program to collapse.
+    This class creates objects of type asteroids and preforms methods on them
     """
 
     def __init__(self, location, speed, size=3):

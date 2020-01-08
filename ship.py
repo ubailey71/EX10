@@ -18,12 +18,11 @@ class Ship:
     def __init__(self, location, speed, angle, radius):
         """
         This is the constructor of the spaceships.
-        :param x_location: the spaceship location on the x axis a float.
-        :param y_location: the spaceship location on the y axis a float.
-        :param x_spd: the spaceship speed on the x axis a float.
-        :param y_spd: the spaceship speed on the y axis a float.
+        :param location: a tuple representing the ships location in an (x,y) format
+        :param speed: a tuple representing the ships speed in an (x,y) format
         :param angle: the spaceship heading angle a float within [0,360].
         :param radius: the spaceship radius a float.
+
         """
         self.__angle = angle
         self.__speed = speed
@@ -33,17 +32,17 @@ class Ship:
     def get_drawing_param(self):
         """
         This method returns the parameters needed to draw the ship.
-        :return: a list.
+        :return: a list of drawing parameters in [x coordinate, y coordinate , angle] format
         """
         return [self.__location[0], self.__location[1], self.__angle]
 
     def move_ship(self, min_x, max_x, min_y, max_y):
         """
         This method move th ship according to it speed.
-        :param min_x: the minimum x location possible a float.
-        :param max_x: the maximum x location possible a float.
-        :param min_y: the minimum y location possible a float.
-        :param max_y: the maximum x location possible a float.
+        :param min_x: the minimum x location possible.
+        :param max_x: the maximum x location possible.
+        :param min_y: the minimum y location possible.
+        :param max_y: the maximum x location possible.
         :return: None.
         """
         prev_x_spd = self.__speed[0]
@@ -60,7 +59,6 @@ class Ship:
         This method sets the spaceship location.
         :param new_x: the new x location a float.
         :param new_y: the new x location a float.
-        :return: None
         """
         self.__location = (new_x, new_y)
 
@@ -68,7 +66,6 @@ class Ship:
         """
         This method rotate the spaceship in a given direction.
         :param direction: a move-key 'l' or 'r'.
-        :return: None
         """
         if direction == LEFT:
             new_angle = (self.__angle + 7) % CIRCLE
